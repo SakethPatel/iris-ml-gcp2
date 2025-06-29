@@ -18,14 +18,17 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
+        working-directory: week4
         run: |
           pip install -r requirements.txt
 
       - name: Run tests and save output
+        working-directory: week4
         run: |
           pytest src/ > report.txt
 
       - name: Comment test report using CML
+        working-directory: week4
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
