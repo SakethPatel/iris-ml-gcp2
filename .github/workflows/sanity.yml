@@ -1,0 +1,32 @@
+name: Sanity Tests with Pytest and CML
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install -r /src/requirements.txt
+
+      - name: Run Pytest
+        run: |
+          pytest src/ --tb=short > report.txt
+
+      - name: CML Report Comment
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pip install cml
+          cml comment create report.txt

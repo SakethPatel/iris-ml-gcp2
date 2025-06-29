@@ -1,0 +1,9 @@
+2025-06-22 06:33:07,222 DEBUG    root            Loaded Command Group: ['gcloud', 'auth']
+2025-06-22 06:33:07,254 DEBUG    root            Loaded Command Group: ['gcloud', 'auth', 'application_default']
+2025-06-22 06:33:07,317 DEBUG    root            Loaded Command Group: ['gcloud', 'auth', 'application-default', 'login']
+2025-06-22 06:33:07,319 DEBUG    root            Running [gcloud.auth.application-default.login] with arguments: []
+2025-06-22 06:39:21,350 INFO     ___FILE_ONLY___ 
+
+Command killed by keyboard interrupt
+
+

@@ -1,0 +1,8 @@
+2025-06-12 07:07:37,227 DEBUG    root            Loaded Command Group: ['gcloud', 'config']
+2025-06-12 07:07:37,237 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'get_value']
+2025-06-12 07:07:37,238 DEBUG    root            Running [gcloud.config.get-value] with arguments: [SECTION/PROPERTY: "project"]
+2025-06-12 07:07:37,244 DEBUG    root            Chosen display Format:value(.)
+2025-06-12 07:07:37,244 INFO     root            Display format: "value(.)"
+2025-06-12 07:07:37,246 INFO     ___FILE_ONLY___ wise-ally-461615-t2
+
+2025-06-12 07:07:37,246 DEBUG    root            SDK update checks are disabled.

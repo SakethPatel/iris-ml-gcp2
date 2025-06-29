@@ -1,0 +1,8 @@
+stages:
+  train_model:
+    cmd: python train.py
+    deps:
+    - dataset/iris.csv
+    - train.py
+    outs:
+    - artifacts/model.joblib

@@ -1,0 +1,4 @@
+[core]
+    remote = myremote
+['remote "myremote"']
+    url = gs://week1_assignment_2_lab_demo_iitm_bs
