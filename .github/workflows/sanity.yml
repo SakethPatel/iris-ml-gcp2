@@ -5,28 +5,33 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  sanity-tests:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: '3.10'
 
       - name: Install dependencies
+        working-directory: week4
         run: |
-          pip install -r /src/requirements.txt
+          pip install -r requirements.txt
 
-      - name: Run Pytest
+      - name: Run tests and save output
+        working-directory: week4
         run: |
-          pytest src/ --tb=short > report.txt
+          pytest src/ > report.txt
 
-      - name: CML Report Comment
+      - name: Comment test report using CML
+        working-directory: week4
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pip install cml
           cml comment create report.txt
+
